@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta 
+	name="viewport"
+	content="width=device-width, initial-scale=1.0"
+	/>
+	<title>Quary Form</title>
+	<link rel="stylesheet" href="form.css">
+
+
+	<link 
+	rel="preconnect" href="https://fonts.gstatic.com"
+	/>
+	<link 
+	 href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+	 rel="stylesheet"
+	/>
+</head>
+
+<body>
+	<!-- *** -->
+<!-- The Heading, Logo and the Navigation bar common for all the pages -->
+		<div class="header">
+        <div class="container">
+            <div class="navbar">
+            <div class="logo">
+              <img src="images/logo.png" width="125px">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../Index/index.html">Home</a></li>
+                    <li><a href="../webExtra/extra1.html">About</a></li>
+                    <li><a href="../Rizan/SDetails/SDetails.html">contact</a></li>
+                    <li><a href="../Dasun/project.html">Store</a></li>
+                </ul>  
+            </nav>      
+        </div>
+
+    <!-- End of the common element -->
+    <!-- *** -->
+
+
+
+	<div class="contact-us">
+		<h1>Contact Us</h1>
+		<p>We'd love to hear from you! Please send us a message.</p>
+    </div>
+
+    <!-- The container that the form elements are displayed -->
+		<div class="formcontainer" id="formcontainer">
+
+			
+
+			<form name="query" id="query"> <!-- The form with the required feilds -->
+				<div>
+					<label for="firstname">First Name:</label>
+					<br>
+					<input type="text" name="fname" id="name1" size="35">
+				</div>
+			<br>
+	          	<div>
+					<label for="lastname">Last Name:</label>
+					<br>
+					<input type="text" name="lname" id="name2" size="35">
+				</div>
+			<br>
+				<div>
+					<label for="Email">Email:</label>
+					<br>
+					<input type="text" name="mail" id="mail" size="35">
+				</div>
+			<br>
+				<div>
+					<label for="subject">Subject:</label>
+					<br>
+					<input type="text" name="subject" id="subject" size="35">
+				</div>
+			<br>
+				<div>
+					<label for="Description">Description:</label>
+					<br>
+					<textarea name="feedback" id="feedback" rows="15" cols="65"></textarea>
+				</div>
+			<br>				
+		</form>
+			<button class="sender" onclick="validation()"><b>Submit</b></button> <!-- button to validate the form and submit -->
+		</div>
+
+		<div class="formviwer" id="formviwer"> <!-- The container that view the form detais -->
+
+			<div class="detailviwer" id="detailviwer"></div> <!-- The data display area of the form -->
+
+			<div class="formfoot" id="formfoot">  <!-- The footer of the form viwer -->
+			<!-- buttons respectively to send and edit the form -->
+				<button class="sender" onclick="editForm()" value="Edit">Edit</button>
+				<button class="sender" onclick="sendForm()" value="Send">Send</button>
+			</div>
+		</div>
+<!-- *** --->
+
+
+    </form>
+	<script src="form.js"></script>
+</body>
+</html>
+

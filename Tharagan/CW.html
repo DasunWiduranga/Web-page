@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+		<meta charset="UTF-8">
+		<title>image galary</title>
+	    <link rel="stylesheet" href="cw2.css">
+	</head>
+	<body>
+		<form>
+			<label for='bg'>background color</label>
+			<select name='background' id='bg'>
+				<option value='gray'>gray</option>
+				<option value='lightblue'>lightblue</option>
+				<option value='orange'>orange</option>
+			</select>
+			<label for='fnt'>font color</label>
+			<select name='fontcolor' id='fnt'>
+				<option value='red'>red</option>
+				<option value='blue'>blue</option>
+				<option value='purple'>purple</option>
+			</select><br>
+			<input type='button' value='press change background color' class='btn' id='btn1'>
+			<input type='button' value='press change font color' class='btn' id='btn2'>
+		</form>
+		<div class='container'>
+			<div class='images'>
+				<img src='bat.jpg' id='img1' alt='bat made out of strong wood'>
+				<img src='ball.jpg' id='img2' alt='ball is an orb'>
+				<img src='stumps.jpg' id='img3' alt='stumps three sticks'>
+				<img src='helmet.jpg' id='img4' alt='helmet protect head'>
+				<img src='ground.jpg' id='img5' alt='ground for playing'>
+			</div>
+			<div class='modal'>
+				<img src='null' alt='popup' class='modalimg'>
+				<span class='modaltxt'></span>
+			</div>
+		</div>
+		<script>
+			let image=document.querySelectorAll('.images img');
+			let modal=document.querySelector('.modal');
+			let modalimg=document.querySelector('.modalimg');
+			let modaltxt=document.querySelector('.modaltxt');
+			image.forEach((image)=>{
+				image.addEventListener('mouseover', () => {
+					modalimg.src=image.src;
+					modaltxt.innerHTML=image.alt;
+					modal.classList.add('appear');
+				image.addEventListener('mouseout',()=>{
+				modal.classList.remove('appear');
+				});
+				});
+			});
+			function changebgcolor(){
+			let background=document.getElementById('bg');
+			let bgcolor=background.options[background.selectedIndex].value;
+			document.body.style.backgroundColor=bgcolor;
+			}
+			document.getElementById( "btn1" ).addEventListener( "click", changebgcolor );
+			
+			function changefntcolor(){
+			let font=document.getElementById('fnt');
+			let fntcolor=font.options[font.selectedIndex].value;
+			document.body.style.color=fntcolor;
+			}
+			document.getElementById( "btn2" ).addEventListener( "click", changefntcolor );
+		</script>
+	</body>
+</html>
